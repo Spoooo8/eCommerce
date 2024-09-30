@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "285590cc-42d9-48bb-889b-8bd3fb82759d",
+		"name": "eCommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38676345"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/v1/products/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"TV\",\r\n    \"brand\":\"Samsung\",\r\n    \"price\":\"500\",\r\n    \"inventory\":\"20\",\r\n    \"description\":\"Samsung electronics\",\r\n    \"category\":\"electronics\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/v1/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get products by brand",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "brand",
+								"value": "Samsung",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9191/api/v1/products/product/by-brand?brand=Samsung",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"product",
+								"by-brand"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Samsung"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get products by category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "brand",
+								"value": "Samsung",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9191/api/v1/products/product/electronics/all/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"product",
+								"electronics",
+								"all",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "image",
+			"item": [
+				{
+					"name": "upload for product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/sspoo/OneDrive/Pictures/Screenshots/Screenshot 2024-09-29 223420.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/v1/images/upload?productId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get image by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/v1/images/image/download/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"image",
+								"download",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": []
+		}
+	]
+}
