@@ -1,12 +1,6 @@
 package com.dailycodework.dreamshops.dto;
 
 import com.dailycodework.dreamshops.model.Category;
-import com.dailycodework.dreamshops.model.Image;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -20,6 +14,6 @@ public class ProductDto {
     private int inventory;
     private String Description;
     private Category category;
-    private List<Image> images;
+    private List<ImageDto> images;
 
 }
