@@ -19,12 +19,19 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 @Service
-@RequiredArgsConstructor
+
 public class OrderService implements IOrderService{
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
     private final CartService cartService;
     private final ModelMapper modelMapper;
+
+    public OrderService(OrderRepository orderRepository, ProductRepository productRepository, CartService cartService, ModelMapper modelMapper) {
+        this.orderRepository = orderRepository;
+        this.productRepository = productRepository;
+        this.cartService = cartService;
+        this.modelMapper = modelMapper;
+    }
 
 
     @Transactional

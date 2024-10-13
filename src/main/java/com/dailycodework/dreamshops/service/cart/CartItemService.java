@@ -13,12 +13,18 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 
 @Service
-@RequiredArgsConstructor
 public class CartItemService implements ICartItemService{
     private final CartItemRepository cartItemRepository;
     private final CartRepository cartRepository;
     private final IProductService productService;
     private final ICartService cartService;
+
+    public CartItemService(CartItemRepository cartItemRepository, CartRepository cartRepository, IProductService productService, ICartService cartService) {
+        this.cartItemRepository = cartItemRepository;
+        this.cartRepository = cartRepository;
+        this.productService = productService;
+        this.cartService = cartService;
+    }
 
     @Override
     public void addItemToCart(Long cartId, Long productId, int quantity) {
